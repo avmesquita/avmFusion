@@ -1,0 +1,126 @@
+﻿@model Impeto.Exchange.Portal.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Seja bem vindo!";
+}
+<br />
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("Verificar", "Dispositivo", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h4>Vamos efetivar a criação de sua nova conta.</h4>
+    <br />
+    <h5 style="color:cadetblue">Tenha em mãos o número de série do dispositivo e </h5>
+    <h5 style="color:cadetblue">certifique-se de que está ligado e configurado.</h5>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstDevice, new { @class = "col-md-2 control-label" })
+        <div class="col-md-10">
+            @Html.TextBoxFor(m => m.FirstDevice, new { @class = "form-control", @onchange= "validarDevice();" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" id="btnVerificarDispositivo" name="btnVerificarDispositivo" class="btn btn-default btn-info" value="Verificar Dispositivo" title="Clique aqui para consultar registro de sincronização." />
+        </div>
+    </div>
+}
+
+<hr />
+
+<div id="formCadastro" name="formCadastro" ><!-- style="display:none;" -->
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary("", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+            <div class="col-md-10">
+                @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" class="btn btn-default btn-success" value="Criar Nova Conta" title="Clique aqui para efetivar a criação de sua nova conta." />
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('#btnVerificarDispositivo').click(function () {
+                $.ajax({
+                    url: '/Dispositivo/Verificar/',
+                    type: 'POST',
+                    data: JSON.stringify($('#FirstDevice').val()),
+                    dataType: 'JSON',
+                    contentType: 'application/json',
+                    success: function (d) {
+                        if (d.status == true) {
+                            $(this).removeClass('btn-info');
+                            $(this).addClass('btn-success');
+                            $('#formCadastro').show();
+                        } else {
+                            $(this).removeClass('btn-info');
+                            $(this).addClass('btn-warning');
+                            $('#formCadastro').hide();
+                        }
+                    },
+                    error: function (d) {
+                        $(this).removeClass('btn-info');
+                        $(this).addClass('btn-danger');
+                    }
+                });
+
+            });
+
+            $('#FirstDevice').change(function () {
+                if ($('#FirstDevice').val().length != 12) {
+                    $('#btnVerificarDispositivo').removeClass('btn-info');
+                    $('#btnVerificarDispositivo').addClass('btn-warning');
+                    $('#formCadastro').hide();
+                } else {
+                    $('#btnVerificarDispositivo').removeClass('btn-warning');
+                    $('#btnVerificarDispositivo').addClass('btn-info');
+                }
+                return false;
+            });
+
+
+
+        });
+    </script>
+
+
+
+
+
+
+}

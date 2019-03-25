@@ -1,0 +1,1376 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/18/2017 8:21:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ACERVENTURA"
+  DTS:CreatorName="ACERVENTURA\andre"
+  DTS:Description="Descrição de Pacotes SSIS"
+  DTS:DTSID="{3283084E-5FFA-485E-BE2C-9C404A8DFBCB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="13.0.2165.0"
+  DTS:LocaleID="1046"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="AtualizacaoDevComDadosProducao"
+  DTS:VersionGUID="{78D62DDC-6741-49B4-BC03-A37D9066B2CC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{39ADC0D8-9F1A-4C3F-B678-471F6F4D3FF6}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=ACERVENTURA\SQLEXPRESS;Initial Catalog=dbo_saladereuniao;Provider=SQLNCLI11;Integrated Security=SSPI;Auto Translate=false;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{921A58BB-7E37-4E74-BA81-0CCC15FDD399}"
+      DTS:ObjectName="SourceConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=outlook-notifier-agent-db.database.windows.net;User ID=outlook-notifier-agent-db;Initial Catalog=outlook-notifier-agent-db;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA73gWDfg2lE6AFlgcfsOYcwAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA/aId6IzezIr5PpgozziJDOyayyFovsv8f4sX7mYk/3gAAAAAOgAAAAAIAACAAAABT9BCAOqAl0TdOdjsZ20gKfCBCqHZ01sfDd2jxm4f0PSAAAACc6eilO9nrJME0ecIIfHjtoSFWYtqhZrBIBJvib1WejUAAAABxH8oRR8uEEYzR6C3YuNuGuRgzr5CnH2qiXdUzjVT6KEi46aLfMTc4tp8Qd3eaCsQ3Ud7kViZ0Iw0thz27UaJm</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Tarefa Fluxo de Dados 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{B478FDC7-7BE2-40EB-9223-96DCE28C469D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Tarefa Fluxo de Dados 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="1 de Destino - TB_DISPOSITIVO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_DISPOSITIVO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[COD_DISPOSITIVO]"
+                      cachedDataType="i4"
+                      cachedName="COD_DISPOSITIVO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[COD_DISPOSITIVO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_DISPOSITIVO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_SERIAL]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="TXT_SERIAL"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_SERIAL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SERIAL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_NOME]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_NOME"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_NOME]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_SMTP]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_SMTP"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_MAC]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="TXT_MAC"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_MAC]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_MAC]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_TOKEN]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_TOKEN"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_TOKEN]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[DAT_ATIVACAO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DAT_ATIVACAO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[DAT_ATIVACAO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[DAT_ATIVACAO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[IND_ATIVO]"
+                      cachedDataType="bool"
+                      cachedName="IND_ATIVO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[IND_ATIVO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[IND_ATIVO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[COD_CLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="COD_CLIENTE"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[COD_CLIENTE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].Columns[TXT_TIMEZONE]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="TXT_TIMEZONE"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_TIMEZONE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TIMEZONE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[COD_DISPOSITIVO]"
+                      dataType="i4"
+                      name="COD_DISPOSITIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_SERIAL]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_SERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_MAC]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_MAC" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_TOKEN" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[DAT_ATIVACAO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_ATIVACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[IND_ATIVO]"
+                      dataType="bool"
+                      name="IND_ATIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[COD_CLIENTE]"
+                      dataType="i4"
+                      name="COD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input].ExternalColumns[TXT_TIMEZONE]"
+                      dataType="wstr"
+                      length="200"
+                      name="TXT_TIMEZONE" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="1 de Origem - TB_DISPOSITIVO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_DISPOSITIVO]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_DISPOSITIVO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_DISPOSITIVO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_DISPOSITIVO]"
+                      name="COD_DISPOSITIVO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SERIAL]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SERIAL]"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SERIAL]"
+                      name="TXT_SERIAL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_NOME]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]"
+                      name="TXT_NOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_MAC]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_MAC]"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_MAC]"
+                      name="TXT_MAC"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TOKEN]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]"
+                      name="TXT_TOKEN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[DAT_ATIVACAO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_ATIVACAO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[DAT_ATIVACAO]"
+                      name="DAT_ATIVACAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[IND_ATIVO]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[IND_ATIVO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[IND_ATIVO]"
+                      name="IND_ATIVO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CLIENTE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]"
+                      name="COD_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TIMEZONE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TIMEZONE]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].Columns[TXT_TIMEZONE]"
+                      name="TXT_TIMEZONE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_DISPOSITIVO]"
+                      dataType="i4"
+                      name="COD_DISPOSITIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SERIAL]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_SERIAL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_MAC]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_MAC" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_TOKEN" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_ATIVACAO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_ATIVACAO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[IND_ATIVO]"
+                      dataType="bool"
+                      name="IND_ATIVO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CLIENTE]"
+                      dataType="i4"
+                      name="COD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TIMEZONE]"
+                      dataType="wstr"
+                      length="200"
+                      name="TXT_TIMEZONE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_DISPOSITIVO]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_DISPOSITIVO]"
+                      name="COD_DISPOSITIVO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SERIAL]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SERIAL]"
+                      name="TXT_SERIAL" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_NOME]"
+                      name="TXT_NOME" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_MAC]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_MAC]"
+                      name="TXT_MAC" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TOKEN]"
+                      name="TXT_TOKEN" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_ATIVACAO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_ATIVACAO]"
+                      name="DAT_ATIVACAO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[IND_ATIVO]"
+                      dataType="bool"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[IND_ATIVO]"
+                      name="IND_ATIVO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CLIENTE]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CLIENTE]"
+                      name="COD_CLIENTE" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TIMEZONE]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TIMEZONE]"
+                      name="TXT_TIMEZONE" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_EXCHANGE_AVAIABILITY_EMAIL]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      cachedDataType="i4"
+                      cachedName="COD_EXCHANGE_AVAIABILITY_EMAIL"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].Columns[TXT_SMTP]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="TXT_SMTP"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].Columns[TXT_STORE_ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="TXT_STORE_ID"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[TXT_STORE_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_STORE_ID]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].Columns[IND_STATUS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="IND_STATUS"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[IND_STATUS]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[IND_STATUS]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].Columns[DAT_ENVIO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DAT_ENVIO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[DAT_ENVIO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[DAT_ENVIO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      dataType="i4"
+                      name="COD_EXCHANGE_AVAIABILITY_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      codePage="1252"
+                      dataType="text"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[TXT_STORE_ID]"
+                      codePage="1252"
+                      dataType="text"
+                      name="TXT_STORE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[IND_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IND_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input].ExternalColumns[DAT_ENVIO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_ENVIO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_EXCHANGE_AVAIABILITY_EMAIL]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      name="COD_EXCHANGE_AVAIABILITY_EMAIL"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_STORE_ID]"
+                      codePage="1252"
+                      dataType="text"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_STORE_ID]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[TXT_STORE_ID]"
+                      name="TXT_STORE_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[IND_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[IND_STATUS]"
+                      length="1"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[IND_STATUS]"
+                      name="IND_STATUS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[DAT_ENVIO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_ENVIO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].Columns[DAT_ENVIO]"
+                      name="DAT_ENVIO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      dataType="i4"
+                      name="COD_EXCHANGE_AVAIABILITY_EMAIL" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      codePage="1252"
+                      dataType="text"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_STORE_ID]"
+                      codePage="1252"
+                      dataType="text"
+                      name="TXT_STORE_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[IND_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="IND_STATUS" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_ENVIO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_ENVIO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_EXCHANGE_AVAIABILITY_EMAIL]"
+                      name="COD_EXCHANGE_AVAIABILITY_EMAIL" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_STORE_ID]"
+                      codePage="1252"
+                      dataType="text"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_STORE_ID]"
+                      name="TXT_STORE_ID" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[IND_STATUS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[IND_STATUS]"
+                      name="IND_STATUS" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_ENVIO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_ENVIO]"
+                      name="DAT_ENVIO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Destino - TB_CLIENTE"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_CLIENTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[COD_CLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="COD_CLIENTE"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[COD_CLIENTE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_NOME]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_NOME"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_NOME]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_SMTP]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_SMTP"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_SENHA]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="TXT_SENHA"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_SENHA]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SENHA]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_TOKEN]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="TXT_TOKEN"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_TOKEN]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_FIRST_DEVICE]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="TXT_FIRST_DEVICE"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_FIRST_DEVICE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_FIRST_DEVICE]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[DAT_CADASTRO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DAT_CADASTRO"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[DAT_CADASTRO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[DAT_CADASTRO]" />
+                    <inputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].Columns[TXT_USER_IDENTITY]"
+                      cachedDataType="nText"
+                      cachedName="TXT_USER_IDENTITY"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_USER_IDENTITY]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_USER_IDENTITY]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[COD_CLIENTE]"
+                      dataType="i4"
+                      name="COD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_SENHA]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SENHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="200"
+                      name="TXT_TOKEN" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_FIRST_DEVICE]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_FIRST_DEVICE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[DAT_CADASTRO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_CADASTRO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input].ExternalColumns[TXT_USER_IDENTITY]"
+                      dataType="nText"
+                      name="TXT_USER_IDENTITY" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origem OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;7"
+              description="Origem OLE DB"
+              name="Origem - TB_CLIENTE"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[TB_CLIENTE]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Os mapeamentos entre os parâmetros no comando SQL e as variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionOLEDB]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB]"
+                  name="Saída de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CLIENTE]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[COD_CLIENTE]"
+                      name="COD_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_NOME]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_NOME]"
+                      name="TXT_NOME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SENHA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SENHA]"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_SENHA]"
+                      name="TXT_SENHA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TOKEN]"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_TOKEN]"
+                      name="TXT_TOKEN"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_FIRST_DEVICE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_FIRST_DEVICE]"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_FIRST_DEVICE]"
+                      name="TXT_FIRST_DEVICE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[DAT_CADASTRO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_CADASTRO]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[DAT_CADASTRO]"
+                      name="DAT_CADASTRO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_USER_IDENTITY]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_USER_IDENTITY]"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].Columns[TXT_USER_IDENTITY]"
+                      name="TXT_USER_IDENTITY"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[COD_CLIENTE]"
+                      dataType="i4"
+                      name="COD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_NOME" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SMTP" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_SENHA]"
+                      dataType="wstr"
+                      length="100"
+                      name="TXT_SENHA" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="200"
+                      name="TXT_TOKEN" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_FIRST_DEVICE]"
+                      dataType="wstr"
+                      length="12"
+                      name="TXT_FIRST_DEVICE" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[DAT_CADASTRO]"
+                      dataType="dbTimeStamp"
+                      name="DAT_CADASTRO" />
+                    <externalMetadataColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB].ExternalColumns[TXT_USER_IDENTITY]"
+                      dataType="nText"
+                      name="TXT_USER_IDENTITY" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CLIENTE]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[COD_CLIENTE]"
+                      name="COD_CLIENTE" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_NOME]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_NOME]"
+                      name="TXT_NOME" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SMTP]"
+                      name="TXT_SMTP" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SENHA]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_SENHA]"
+                      name="TXT_SENHA" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TOKEN]"
+                      dataType="wstr"
+                      length="200"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_TOKEN]"
+                      name="TXT_TOKEN" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_FIRST_DEVICE]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_FIRST_DEVICE]"
+                      name="TXT_FIRST_DEVICE" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_CADASTRO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[DAT_CADASTRO]"
+                      name="DAT_CADASTRO" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_USER_IDENTITY]"
+                      dataType="nText"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[TXT_USER_IDENTITY]"
+                      name="TXT_USER_IDENTITY" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Erro de Origem OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem OLE DB2]"
+              endId="Package\Tarefa Fluxo de Dados 1\2 de Destino - TB_EXCHANGE_AVAIABILITY_EMAIL.Inputs[Destination Input]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Tarefa Fluxo de Dados 1\2 de Origem - TB_EXCHANGE_AVAIABILITY_EMAIL.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem OLE DB1]"
+              endId="Package\Tarefa Fluxo de Dados 1\1 de Destino - TB_DISPOSITIVO.Inputs[Destination Input]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Tarefa Fluxo de Dados 1\1 de Origem - TB_DISPOSITIVO.Outputs[Saída de Origem OLE DB]" />
+            <path
+              refId="Package\Tarefa Fluxo de Dados 1.Paths[Saída de Origem OLE DB]"
+              endId="Package\Tarefa Fluxo de Dados 1\Destino - TB_CLIENTE.Inputs[Destination Input]"
+              name="Saída de Origem OLE DB"
+              startId="Package\Tarefa Fluxo de Dados 1\Origem - TB_CLIENTE.Outputs[Saída de Origem OLE DB]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+</DTS:Executable>

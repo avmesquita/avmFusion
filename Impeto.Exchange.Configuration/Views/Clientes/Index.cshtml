@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Impeto.Framework.Exchange.Entity.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+<h2>Gestão de Clientes</h2>
+
+<p>
+    @Html.ActionLink(" ", "Create", null, new { @class = "btn btn-primary btn-large glyphicon glyphicon-plus-sign", title = "Cadastrar Novo Cliente" }) 
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Smtp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TimeZone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(" ", "Edit", new { id = item.Codigo }, new { @class = "btn btn-warning btn-large glyphicon glyphicon-pencil", title = "Editar" }) 
+            @Html.ActionLink(" ", "Details", new { id = item.Codigo }, new { @class = "btn btn-primary btn-large glyphicon glyphicon-list-alt", title = "Detalhes" }) 
+            @Html.ActionLink(" ", "Delete", new { id = item.Codigo }, new { @class = "btn btn-large btn-danger glyphicon glyphicon-trash", title = "Excluir" })
+            &nbsp;&nbsp;
+            @Html.ActionLink(" ", "CreateSalas", new { id = item.Codigo }, new { @class = "btn btn-large btn-info glyphicon glyphicon-th", title = "Cadastrar Salas de Reunião" })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smtp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeZone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataCadastro)
+        </td>
+    </tr>
+}
+
+</table>

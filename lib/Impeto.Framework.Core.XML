@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Impeto.Framework.Core</name>
+    </assembly>
+    <members>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.FindById(`0)">
+            <summary>
+            Obtém um objeto do domínio através do identificador
+            </summary>
+            <param name="id">Valor da chave primária</param>
+            <returns>Retorna um objeto</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.FindEqual(System.String,System.Object)">
+            <summary>
+            Obtém um objeto do domínio através de uma propriedade/valor
+            </summary>
+            <param name="propertyName">Nome da propriedade</param>
+            <param name="value">Valor da propriedade</param>
+            <returns>Retorna um objeto</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.GetAll">
+            <summary>
+            Obtém uma lista com todos os objetos do domínio
+            </summary>
+            <returns>Retorna uma lista de objetos</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.GetAllEqual(System.String,System.Object)">
+            <summary>
+            Obtém uma lista com todos os objetos do domínio através de uma propriedade/valor
+            </summary>
+            <param name="propertyName">Nome da propriedade</param>
+            <param name="value">Valor da propriedade</param>
+            <returns>Retorna uma lista de objetos</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.SaveOrUpdate(`1)">
+            <summary>
+            Inclui ou atualiza um objeto, conforme a chave primária.
+            Se a chave primária estiver preenchida, atualiza, se não, inclui.
+            </summary>
+            <param name="entity">Objeto do domínio</param>
+            <returns>Retorna um objeto salvo</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.Insert(`1)">
+            <summary>
+            Inclui um objeto.
+            </summary>
+            <param name="entity">Objeto do domínio</param>
+            <returns>Retorna um objeto salvo</returns>       
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.Update(`1)">
+            <summary>
+            Atualiza um objeto, conforme a chave primária.       
+            </summary>
+            <param name="entity">Objeto do domínio</param>
+            <returns>Retorna um objeto salvo</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Data.IRepository`2.Delete(`1)">
+            <summary>
+            Excluir um objeto do domínio através da chave primária
+            </summary>
+            <param name="entity">Objeto do domínio</param>
+        </member>
+        <member name="T:Impeto.Framework.Core.DependencyInjection.DependencyInjectionContainer">
+            <summary>
+            Classe para acesso singleton ao UnityContainer
+            </summary>
+        </member>
+        <member name="T:Impeto.Framework.Core.DependencyInjection.DependencyInjectionFactory">
+            <summary>
+            Cria objetos utilizando o injeção de dependência
+            </summary>
+        </member>
+        <member name="M:Impeto.Framework.Core.DependencyInjection.DependencyInjectionFactory.Create``1">
+            <summary>
+            Cria um objeto utilizando injeção de dependência
+            </summary>
+            <typeparam name="T">Tipo do objeto (a interface)</typeparam>
+            <returns>Objeto concreto</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.DependencyInjection.DependencyInjectionFactory.Create``1(System.String,System.Object)">
+            <summary>
+            Cria um objeto utilizando injeção de dependência, passando um parâmetro para o construtor
+            </summary>
+            <typeparam name="T">Tipo do objeto (a interface)</typeparam>
+            <param name="key">Nome do parâmetro</param>
+            <param name="value">Valor que será passado para o parâmetro</param>
+            <returns>Objeto concreto</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.ExtensionMethods.StringExtensionMethods.RemoveAccents(System.String)">
+            <summary>
+            Método de extensão da framework da Ímpeto responsável por remover acentos e caracteres especiais
+            </summary>
+            <example>
+            Incluir o using:
+            using Impeto.Framework.Core.ExtensionMethods;
+            
+            Toda variável do tipo string da classe que possui o "using" que foi declarado, passa até o método "RemoveAccents()". Exemplo:
+            string textoSemAcentos = textoComAcento.RemoveAccents();
+            </example>
+            <param name="text"></param>
+            <returns>Retorna o texto sem acentos e caracteres especiais</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.RegistroDeLogs.#ctor(System.String)">
+            <summary>
+            Passar o seguinte no construtor:
+            Server.MapPath("~/logs")
+            </summary>
+            <param name="mPath"></param>
+        </member>
+        <member name="M:Impeto.Framework.Core.Specification.AndSpecification`1.IsSatisfiedBy(`0)">
+            <summary>
+            A condição é satisfeita se a validação das duas especificações são verdadeiras
+            </summary>
+            <param name="entity"></param>
+            <returns>Retorna verdadeiro se a validação das duas especificações são verdadeiras</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Specification.NotSpecification`1.IsSatisfiedBy(`0)">
+            <summary>
+            A condição é satisfeita se a validação da especificação é falsa
+            </summary>
+            <param name="entity"></param>
+            <returns>Retorna verdadeiro se a validação da especificação é falsa</returns>
+        </member>
+        <member name="M:Impeto.Framework.Core.Specification.OrSpecification`1.IsSatisfiedBy(`0)">
+            <summary>
+            A condição é satisfeita se a validação de uma ou outra especificação é verdadeira
+            </summary>
+            <param name="entity"></param>
+            <returns>Retorna verdadeiro se uma ou outra especificação é verdadeira</returns>
+        </member>
+    </members>
+</doc>

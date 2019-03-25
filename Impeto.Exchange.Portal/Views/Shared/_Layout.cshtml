@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <title>@ViewBag.Title - Sala de Reunião - Ímpeto</title>
+    <meta name="description" content="Portal de Gestão de Salas de Reunião" />
+    <meta name="keywords" content="impeto, microsoft, office365, exchange, meeting, room, sala, reuniao">
+    <meta name="robots" content="index,nofollow">
+    <meta http-equiv="content-language" content="pt-br">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type='application/ld+json'>
+        {
+        "@@context": "http://www.schema.org",
+        "@@type": "LocalBusiness",
+        "name": "Ímpeto Informática",
+        "url": "http://saladereuniao.impeto.com.br",
+        "logo": "http://saladereuniao.impeto.com.br/Content/images/logo.png",
+        "address": {
+        "@@type": "PostalAddress",
+        "streetAddress": "Largo de São Francisco de Paula, 42, 10o.andar",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "postalCode": "20041-320",
+        "addressCountry": "Brasil"
+        },
+        "contactPoint": {
+        "@@type": "ContactPoint",
+        "telephone": "(21) 3970-9900",
+        },
+        "sameAs": ["http://www.impeto.com.br",
+        "http://www.facebook.com/impetoinfo/",
+        "https://www.instagram.com/impetoinfo/",
+        "https://www.pinterest.com/impetoinfo",
+        "https://plus.google.com/ImpetoInformatica"],
+        "hasMap": "https://www.google.com/maps/embed?pb=",
+        "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00"
+        }
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+     ga('create', 'UA-00000000-0', 'auto');
+     ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Sala de Reunião", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gestão <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Minha Conta", "FinanceiroMassagens", "Relatorio", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Status dos Dispositivos", "FinanceiroMassagens", "Relatorio", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Status das Salas", "MassagensMaisPedidas", "Relatorio", new { area = "" }, null)</li>
+                        </ul>
+
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dispositivos <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Todos", "MassagensMaisPedidas", "Relatorio", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Parear Novo", "MassagensMaisPedidas", "Relatorio", new { area = "" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ímpeto Informática</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

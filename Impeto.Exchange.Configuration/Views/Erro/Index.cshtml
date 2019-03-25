@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Erro";
+}
+<br /><br /><br />
+
+<div class="list-header clearfix">
+    <h2>072 - Erro</h2>
+</div>
+<div class="list-sfs-holder">
+    <div class="alert alert-error">
+        Verifique o endereço digitado<br />
+        ou recomeçe @Html.ActionLink("AQUI", "Index", "Home", new { area = "" }, null).
+    </div>
+</div>

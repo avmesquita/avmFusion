@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Tempo Esgotado";
+}
+<br /><br /><br />
+
+<div class="list-header clearfix">
+    <h2>    - Tempo Esgotado</h2>
+</div>
+<div class="list-sfs-holder">
+    <div class="alert alert-error">
+        Não conseguimos processar sua última requisição em tempo hábil. <br>
+        Tente novamente. Se não conseguir, contacte o suporte do aplicativo <br />
+        informando a hora e o processo para ajudar a localizar o problema.<br />
+        <br />
+        Verifique o endereço digitado<br />
+        ou recomeçe @Html.ActionLink("AQUI", "Index", "Home", new { area = "" }, null).
+    </div>
+</div>

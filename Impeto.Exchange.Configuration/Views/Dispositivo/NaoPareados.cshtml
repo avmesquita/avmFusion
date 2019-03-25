@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Impeto.Framework.Exchange.Entity.Dispositivo>
+
+@{
+    ViewBag.Title = "Dispositivos Não Pareados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+<h2>Dispositivos Não Pareados</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Número de Série
+        </th>
+        <th>
+            Descrição
+        </th>
+        <th>
+            Endereço MAC
+        </th>
+        <th>
+            Token de Segurança
+        </th>
+        <th>
+            Data da Ativação
+        </th>
+        <th>
+            Status
+        </th>
+        <th>
+            Fuso Horário
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Serial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Smtp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MAC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Token)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataAtivacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TimeZone)
+        </td>
+    </tr>
+}
+
+</table>

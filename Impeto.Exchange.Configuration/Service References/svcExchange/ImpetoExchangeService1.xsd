@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="MeetingAttendeeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Organizer" />
+      <xs:enumeration value="Required" />
+      <xs:enumeration value="Optional" />
+      <xs:enumeration value="Room" />
+      <xs:enumeration value="Resource" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MeetingAttendeeType" nillable="true" type="tns:MeetingAttendeeType" />
+  <xs:complexType name="ArrayOfEmailAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EmailAddress" nillable="true" type="tns:EmailAddress" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmailAddress" nillable="true" type="tns:ArrayOfEmailAddress" />
+  <xs:complexType name="EmailAddress">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComplexProperty">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Id" nillable="true" type="tns:ItemId" />
+          <xs:element minOccurs="0" name="MailboxType" nillable="true" type="tns:MailboxType" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="RoutingType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="EmailAddress" nillable="true" type="tns:EmailAddress" />
+  <xs:complexType name="ComplexProperty">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ComplexProperty" nillable="true" type="tns:ComplexProperty" />
+  <xs:complexType name="ItemId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ServiceId">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ItemId" nillable="true" type="tns:ItemId" />
+  <xs:complexType name="ServiceId">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ComplexProperty">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ServiceId" nillable="true" type="tns:ServiceId" />
+  <xs:simpleType name="MailboxType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="OneOff" />
+      <xs:enumeration value="Mailbox" />
+      <xs:enumeration value="PublicFolder" />
+      <xs:enumeration value="PublicGroup" />
+      <xs:enumeration value="ContactGroup" />
+      <xs:enumeration value="Contact" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MailboxType" nillable="true" type="tns:MailboxType" />
+</xs:schema>

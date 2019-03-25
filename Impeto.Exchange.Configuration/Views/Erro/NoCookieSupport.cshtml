@@ -1,0 +1,16 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Cookie Não Suportado";
+}
+<br /><br /><br />
+
+<div class="list-header clearfix">
+    <h2>    - Cookie Não Suportado</h2>
+</div>
+<div class="list-sfs-holder">
+    <div class="alert alert-error">
+        Verifique o endereço digitado<br />
+        ou recomeçe @Html.ActionLink("AQUI", "Index", "Home", new { area = "" }, null).
+    </div>
+</div>
