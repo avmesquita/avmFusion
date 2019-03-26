@@ -8,3 +8,131 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace Fusion.Exchange.Configuration.svcExchange {
+    
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="svcExchange.IFusionExchangeService")]
+    public interface IFusionExchangeService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniao", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoResponse" +
+            "")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniao();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniao", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoResponse" +
+            "")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "Response")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniaoTimeZone(string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "Response")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoTimeZoneAsync(string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFull", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFullRespons" +
+            "e")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeTimeZoneFull(string email, string senha, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFull", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFullRespons" +
+            "e")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeTimeZoneFullAsync(string email, string senha, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchange", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchangeResponse")]
+        Fusion.Framework.Exchange.Models.Status obterDisponibilidadeExchange(string email, string senha, string smtp, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchange", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchangeResponse")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.Status> obterDisponibilidadeExchangeAsync(string email, string senha, string smtp, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getBuildingRoomList", ReplyAction="http://tempuri.org/IFusionExchangeService/getBuildingRoomListResponse")]
+        Microsoft.Exchange.WebServices.Data.EmailAddress[] getBuildingRoomList(string email, string senha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getBuildingRoomList", ReplyAction="http://tempuri.org/IFusionExchangeService/getBuildingRoomListResponse")]
+        System.Threading.Tasks.Task<Microsoft.Exchange.WebServices.Data.EmailAddress[]> getBuildingRoomListAsync(string email, string senha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getRooms", ReplyAction="http://tempuri.org/IFusionExchangeService/getRoomsResponse")]
+        Microsoft.Exchange.WebServices.Data.EmailAddress[] getRooms(string email, string senha, string smtpBuildingRoom);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getRooms", ReplyAction="http://tempuri.org/IFusionExchangeService/getRoomsResponse")]
+        System.Threading.Tasks.Task<Microsoft.Exchange.WebServices.Data.EmailAddress[]> getRoomsAsync(string email, string senha, string smtpBuildingRoom);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IFusionExchangeServiceChannel : Fusion.Exchange.Configuration.svcExchange.IFusionExchangeService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class FusionExchangeServiceClient : System.ServiceModel.ClientBase<Fusion.Exchange.Configuration.svcExchange.IFusionExchangeService>, Fusion.Exchange.Configuration.svcExchange.IFusionExchangeService {
+        
+        public FusionExchangeServiceClient() {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public FusionExchangeServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniao() {
+            return base.Channel.obterDisponibilidadeSalaReuniao();
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoAsync() {
+            return base.Channel.obterDisponibilidadeSalaReuniaoAsync();
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniaoTimeZone(string timeZone) {
+            return base.Channel.obterDisponibilidadeSalaReuniaoTimeZone(timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoTimeZoneAsync(string timeZone) {
+            return base.Channel.obterDisponibilidadeSalaReuniaoTimeZoneAsync(timeZone);
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeTimeZoneFull(string email, string senha, string timeZone) {
+            return base.Channel.obterDisponibilidadeTimeZoneFull(email, senha, timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeTimeZoneFullAsync(string email, string senha, string timeZone) {
+            return base.Channel.obterDisponibilidadeTimeZoneFullAsync(email, senha, timeZone);
+        }
+        
+        public Fusion.Framework.Exchange.Models.Status obterDisponibilidadeExchange(string email, string senha, string smtp, string timeZone) {
+            return base.Channel.obterDisponibilidadeExchange(email, senha, smtp, timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.Status> obterDisponibilidadeExchangeAsync(string email, string senha, string smtp, string timeZone) {
+            return base.Channel.obterDisponibilidadeExchangeAsync(email, senha, smtp, timeZone);
+        }
+        
+        public Microsoft.Exchange.WebServices.Data.EmailAddress[] getBuildingRoomList(string email, string senha) {
+            return base.Channel.getBuildingRoomList(email, senha);
+        }
+        
+        public System.Threading.Tasks.Task<Microsoft.Exchange.WebServices.Data.EmailAddress[]> getBuildingRoomListAsync(string email, string senha) {
+            return base.Channel.getBuildingRoomListAsync(email, senha);
+        }
+        
+        public Microsoft.Exchange.WebServices.Data.EmailAddress[] getRooms(string email, string senha, string smtpBuildingRoom) {
+            return base.Channel.getRooms(email, senha, smtpBuildingRoom);
+        }
+        
+        public System.Threading.Tasks.Task<Microsoft.Exchange.WebServices.Data.EmailAddress[]> getRoomsAsync(string email, string senha, string smtpBuildingRoom) {
+            return base.Channel.getRoomsAsync(email, senha, smtpBuildingRoom);
+        }
+    }
+}

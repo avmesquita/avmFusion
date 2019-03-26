@@ -14,6 +14,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Data.Entity.Validation;
 using Fusion.Framework.Exchange.Service;
+using Fusion.Framework.Exchange.Models;
 
 namespace Fusion.Exchange.SalaDeReuniao
 {
@@ -70,9 +71,9 @@ namespace Fusion.Exchange.SalaDeReuniao
 
                     bool enviouEmailAviso = false;
 
-                    switch (disponibilidadeSalaDispositivo.StatusDisponibilidadek__BackingField)
+                    switch (disponibilidadeSalaDispositivo.StatusDisponibilidade)
                     {
-                        case svcExchange.StatusDisponibilidade.EmReuniao:
+                        case StatusDisponibilidade.EmReuniao:
                             //
                             log.WriteLine("Opa! Encontrei um evento que indica reunião com 15 minutos de vida.");
 
@@ -100,11 +101,11 @@ namespace Fusion.Exchange.SalaDeReuniao
                             if (!arduinoStatusAviso)
                             {
                                 log.WriteLine("Opa! Verifiquei ainda que não existem pessoas na sala.");
-                                foreach (var evento in disponibilidadeSalaDispositivo.ListaEventosk__BackingField)
+                                foreach (var evento in disponibilidadeSalaDispositivo.ListaEventos)
                                 {
-                                    log.WriteLine("O assunto dela é " + evento.Detailsk__BackingField.Subjectk__BackingField);
+                                    log.WriteLine("O assunto dela é " + evento.Details.Subject);
 
-                                    storeId = evento.Detailsk__BackingField.StoreIdk__BackingField;
+                                    storeId = evento.Details.StoreId;
                                     smtp = sala.Smtp;
 
                                     // Obtém a informação se o e-mail de AVISO já foi enviado anteriormente
@@ -140,7 +141,7 @@ namespace Fusion.Exchange.SalaDeReuniao
                             //
                             break;
 
-                        case svcExchange.StatusDisponibilidade.EmReuniao30:
+                        case StatusDisponibilidade.EmReuniao30:
                             //
                             log.WriteLine("Opa! Encontrei um evento que indica reunião com 30 minutos de vida.");
                             log.WriteLine("Verificando pelo dispositivo se existe alguém na sala... um momento...");
@@ -166,11 +167,11 @@ namespace Fusion.Exchange.SalaDeReuniao
                             if (!arduinoStatus)
                             {
                                 log.WriteLine("Opa! Verifiquei ainda que não existem pessoas na sala.");
-                                foreach (var evento in disponibilidadeSalaDispositivo.ListaEventosk__BackingField)
+                                foreach (var evento in disponibilidadeSalaDispositivo.ListaEventos)
                                 {
-                                    log.WriteLine("O assunto dela é " + evento.Detailsk__BackingField.Subjectk__BackingField);
+                                    log.WriteLine("O assunto dela é " + evento.Details.Subject);
 
-                                    storeId = evento.Detailsk__BackingField.StoreIdk__BackingField;
+                                    storeId = evento.Details.StoreId;
                                     smtp = sala.Smtp;
 
                                     var bs = new SalaDeReuniaoBS();
@@ -235,14 +236,14 @@ namespace Fusion.Exchange.SalaDeReuniao
         }
 
         [NoAutomaticTrigger]
-        private static void gravarDisponibilidade(svcExchange.Status disponibilidade)
+        private static void gravarDisponibilidade(Framework.Exchange.Models.Status disponibilidade)
         {
             SalaDeReuniaoContexto SalaDeReuniaoContexto = new SalaDeReuniaoContexto();
 
             // GRAVA O HEADER
             var exchangeAvaiability = new ExchangeAvaiability();
-            exchangeAvaiability.Mensagem = disponibilidade.Mensagemk__BackingField;
-            exchangeAvaiability.Nome = disponibilidade.Mensagemk__BackingField;
+            exchangeAvaiability.Mensagem = disponibilidade.Mensagem;
+            exchangeAvaiability.Nome = disponibilidade.Mensagem;
             exchangeAvaiability.TipoMeetingAtendee = 0;
             SalaDeReuniaoContexto.DisponibilidadeModels.Add(exchangeAvaiability);
             SalaDeReuniaoContexto.SaveChanges();
@@ -250,8 +251,8 @@ namespace Fusion.Exchange.SalaDeReuniao
 
             // GRAVA O STATUS
             var exchangeStatus = new ExchangeAvaiabilityStatus();
-            exchangeStatus.Message = disponibilidade.Mensagemk__BackingField;
-            exchangeStatus.NextMeetingRoomSugestion = disponibilidade.SugestaoProximaReuniaok__BackingField;
+            exchangeStatus.Message = disponibilidade.Mensagem;
+            exchangeStatus.NextMeetingRoomSugestion = disponibilidade.SugestaoProximaReuniao;
 
             // FK
             exchangeStatus.CodigoExchangeAvaiability = exchangeAvaiability.CodigoExchangeAvaiability;
@@ -260,19 +261,19 @@ namespace Fusion.Exchange.SalaDeReuniao
             SalaDeReuniaoContexto.SaveChanges();
 
             // GRAVA O DETALHE
-            foreach (var item in disponibilidade.ListaEventosk__BackingField)
+            foreach (var item in disponibilidade.ListaEventos)
             {
                 var detalhe = new ExchangeAvaiabilityStatusDetail();
 
-                detalhe.DataInicio = item.StartTimek__BackingField;
-                detalhe.DataFim = item.EndTimek__BackingField;
-                detalhe.IsException = item.Detailsk__BackingField.IsExceptionk__BackingField;
-                detalhe.IsMeeting = item.Detailsk__BackingField.IsMeetingk__BackingField;
-                detalhe.IsPrivative = item.Detailsk__BackingField.IsPrivatek__BackingField;
-                detalhe.IsReminderSet = item.Detailsk__BackingField.IsReminderSetk__BackingField;
-                detalhe.Location = item.Detailsk__BackingField.Locationk__BackingField;
-                detalhe.StoreId = item.Detailsk__BackingField.StoreIdk__BackingField;
-                detalhe.Subject = item.Detailsk__BackingField.Subjectk__BackingField;
+                detalhe.DataInicio = item.StartTime;
+                detalhe.DataFim = item.EndTime;
+                detalhe.IsException = item.Details.IsException;
+                detalhe.IsMeeting = item.Details.IsMeeting;
+                detalhe.IsPrivative = item.Details.IsPrivate;
+                detalhe.IsReminderSet = item.Details.IsReminderSet;
+                detalhe.Location = item.Details.Location;
+                detalhe.StoreId = item.Details.StoreId;
+                detalhe.Subject = item.Details.Subject;
 
                 // FK
                 detalhe.CodigoExchangeAvaiabilityStatus = exchangeStatus.CodigoExchangeAvaibilityStatus;

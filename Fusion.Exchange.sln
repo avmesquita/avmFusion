@@ -16,14 +16,23 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Framework.Exchange.Service", "Fusion.Framework.Exchange.Service\Fusion.Framework.Exchange.Service.csproj", "{DD0CC893-2285-47EC-95D8-833405167629}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Exchange.Web", "Fusion.Exchange.Web\Fusion.Exchange.Web.csproj", "{4EB4185F-F714-41A2-AC9B-B478AA5C7F61}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60F1417E-F58D-4788-AB1F-B140DFD8D5E4} = {60F1417E-F58D-4788-AB1F-B140DFD8D5E4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Exchange.Arduino", "Fusion.Exchange.Arduino\Fusion.Exchange.Arduino.csproj", "{DEA5FDF9-0400-40A0-B76D-A4921B74082D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Exchange.Configuration", "Fusion.Exchange.Configuration\Fusion.Exchange.Configuration.csproj", "{94395992-98DF-413B-B7C6-A47FF891BE0D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60F1417E-F58D-4788-AB1F-B140DFD8D5E4} = {60F1417E-F58D-4788-AB1F-B140DFD8D5E4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Framework.Exchange.Entity", "Fusion.Framework.Exchange.Entity\Fusion.Framework.Exchange.Entity.csproj", "{FBE4C725-B6AE-41C4-AD00-6813EEE6647F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Exchange.SalaDeReuniao", "Fusion.Exchange.SalaDeReuniao\Fusion.Exchange.SalaDeReuniao.csproj", "{54C03685-5528-4769-9ACB-171C5E15FB16}"
+	ProjectSection(ProjectDependencies) = postProject
+		{60F1417E-F58D-4788-AB1F-B140DFD8D5E4} = {60F1417E-F58D-4788-AB1F-B140DFD8D5E4}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion.Exchange.Test", "Fusion.Exchange.Test\Fusion.Exchange.Test.csproj", "{4F5F306D-9B17-43F4-B0F5-18F4F8D56EC2}"
 EndProject

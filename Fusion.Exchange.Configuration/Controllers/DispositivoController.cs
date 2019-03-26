@@ -116,7 +116,7 @@ namespace Fusion.Exchange.Configuration.Controllers
     
         public async Task<Framework.Exchange.Models.SalaDeReuniao> GetSala(string serial)
         {
-            const string devPath = "http://localhost/Fusion.Exchange.Arduino/Fusion.Exchange.Arduino/api/Arduino";
+            const string devPath = "http://localhost:59138/Fusion.Exchange.Arduino/Fusion.Exchange.Arduino/api/Arduino";
             const string prodPath = "http://Fusionexchangearduino.azurewebsites.net/Fusion.Exchange.Arduino/api/Arduino";
 
             string path = "";

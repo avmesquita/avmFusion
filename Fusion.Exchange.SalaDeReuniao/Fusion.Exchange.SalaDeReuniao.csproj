@@ -137,21 +137,10 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao.datasource" />
+    <None Include="Properties\DataSources\Fusion.Framework.Exchange.Models.Status.datasource" />
     <None Include="Properties\PublishProfiles\ImpetoSalaDeReuniao - Web Deploy.pubxml" />
     <None Include="Properties\webjob-publish-settings.json" />
-    <None Include="Service References\svcExchange\FusionExchangeService.wsdl" />
-    <None Include="Service References\svcExchange\FusionExchangeService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -166,6 +155,22 @@
     <None Include="Service References\svcExchange\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Service References\svcExchange\Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService1.wsdl" />
+    <None Include="Service References\svcExchange\FusionExchangeService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\svcExchange\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

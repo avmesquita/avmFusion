@@ -8,3 +8,313 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+namespace Fusion.Exchange.SalaDeReuniao.svcExchange {
+    using System.Runtime.Serialization;
+    using System;
+    
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MeetingAttendeeType", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    public enum MeetingAttendeeType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Organizer = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Required = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Optional = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Room = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Resource = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EmailAddress", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    [System.SerializableAttribute()]
+    public partial class EmailAddress : Fusion.Exchange.SalaDeReuniao.svcExchange.ComplexProperty {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private Fusion.Exchange.SalaDeReuniao.svcExchange.ItemId IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<Fusion.Exchange.SalaDeReuniao.svcExchange.MailboxType> MailboxTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RoutingTypeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Address {
+            get {
+                return this.AddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
+                    this.AddressField = value;
+                    this.RaisePropertyChanged("Address");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public Fusion.Exchange.SalaDeReuniao.svcExchange.ItemId Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<Fusion.Exchange.SalaDeReuniao.svcExchange.MailboxType> MailboxType {
+            get {
+                return this.MailboxTypeField;
+            }
+            set {
+                if ((this.MailboxTypeField.Equals(value) != true)) {
+                    this.MailboxTypeField = value;
+                    this.RaisePropertyChanged("MailboxType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RoutingType {
+            get {
+                return this.RoutingTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RoutingTypeField, value) != true)) {
+                    this.RoutingTypeField = value;
+                    this.RaisePropertyChanged("RoutingType");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ComplexProperty", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Fusion.Exchange.SalaDeReuniao.svcExchange.ServiceId))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Fusion.Exchange.SalaDeReuniao.svcExchange.ItemId))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress))]
+    public partial class ComplexProperty : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceId", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(Fusion.Exchange.SalaDeReuniao.svcExchange.ItemId))]
+    public partial class ServiceId : Fusion.Exchange.SalaDeReuniao.svcExchange.ComplexProperty {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ItemId", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    [System.SerializableAttribute()]
+    public partial class ItemId : Fusion.Exchange.SalaDeReuniao.svcExchange.ServiceId {
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MailboxType", Namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data")]
+    public enum MailboxType : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Unknown = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        OneOff = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Mailbox = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PublicFolder = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        PublicGroup = 4,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ContactGroup = 5,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Contact = 6,
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="svcExchange.IFusionExchangeService")]
+    public interface IFusionExchangeService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniao", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoResponse" +
+            "")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniao();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniao", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoResponse" +
+            "")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "Response")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniaoTimeZone(string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeSalaReuniaoTimeZone" +
+            "Response")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoTimeZoneAsync(string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFull", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFullRespons" +
+            "e")]
+        Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeTimeZoneFull(string email, string senha, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFull", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeTimeZoneFullRespons" +
+            "e")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeTimeZoneFullAsync(string email, string senha, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchange", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchangeResponse")]
+        Fusion.Framework.Exchange.Models.Status obterDisponibilidadeExchange(string email, string senha, string smtp, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchange", ReplyAction="http://tempuri.org/IFusionExchangeService/obterDisponibilidadeExchangeResponse")]
+        System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.Status> obterDisponibilidadeExchangeAsync(string email, string senha, string smtp, string timeZone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getBuildingRoomList", ReplyAction="http://tempuri.org/IFusionExchangeService/getBuildingRoomListResponse")]
+        Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[] getBuildingRoomList(string email, string senha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getBuildingRoomList", ReplyAction="http://tempuri.org/IFusionExchangeService/getBuildingRoomListResponse")]
+        System.Threading.Tasks.Task<Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[]> getBuildingRoomListAsync(string email, string senha);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getRooms", ReplyAction="http://tempuri.org/IFusionExchangeService/getRoomsResponse")]
+        Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[] getRooms(string email, string senha, string smtpBuildingRoom);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFusionExchangeService/getRooms", ReplyAction="http://tempuri.org/IFusionExchangeService/getRoomsResponse")]
+        System.Threading.Tasks.Task<Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[]> getRoomsAsync(string email, string senha, string smtpBuildingRoom);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IFusionExchangeServiceChannel : Fusion.Exchange.SalaDeReuniao.svcExchange.IFusionExchangeService, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class FusionExchangeServiceClient : System.ServiceModel.ClientBase<Fusion.Exchange.SalaDeReuniao.svcExchange.IFusionExchangeService>, Fusion.Exchange.SalaDeReuniao.svcExchange.IFusionExchangeService {
+        
+        public FusionExchangeServiceClient() {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public FusionExchangeServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public FusionExchangeServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniao() {
+            return base.Channel.obterDisponibilidadeSalaReuniao();
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoAsync() {
+            return base.Channel.obterDisponibilidadeSalaReuniaoAsync();
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeSalaReuniaoTimeZone(string timeZone) {
+            return base.Channel.obterDisponibilidadeSalaReuniaoTimeZone(timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeSalaReuniaoTimeZoneAsync(string timeZone) {
+            return base.Channel.obterDisponibilidadeSalaReuniaoTimeZoneAsync(timeZone);
+        }
+        
+        public Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[] obterDisponibilidadeTimeZoneFull(string email, string senha, string timeZone) {
+            return base.Channel.obterDisponibilidadeTimeZoneFull(email, senha, timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao[]> obterDisponibilidadeTimeZoneFullAsync(string email, string senha, string timeZone) {
+            return base.Channel.obterDisponibilidadeTimeZoneFullAsync(email, senha, timeZone);
+        }
+        
+        public Fusion.Framework.Exchange.Models.Status obterDisponibilidadeExchange(string email, string senha, string smtp, string timeZone) {
+            return base.Channel.obterDisponibilidadeExchange(email, senha, smtp, timeZone);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Framework.Exchange.Models.Status> obterDisponibilidadeExchangeAsync(string email, string senha, string smtp, string timeZone) {
+            return base.Channel.obterDisponibilidadeExchangeAsync(email, senha, smtp, timeZone);
+        }
+        
+        public Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[] getBuildingRoomList(string email, string senha) {
+            return base.Channel.getBuildingRoomList(email, senha);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[]> getBuildingRoomListAsync(string email, string senha) {
+            return base.Channel.getBuildingRoomListAsync(email, senha);
+        }
+        
+        public Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[] getRooms(string email, string senha, string smtpBuildingRoom) {
+            return base.Channel.getRooms(email, senha, smtpBuildingRoom);
+        }
+        
+        public System.Threading.Tasks.Task<Fusion.Exchange.SalaDeReuniao.svcExchange.EmailAddress[]> getRoomsAsync(string email, string senha, string smtpBuildingRoom) {
+            return base.Channel.getRoomsAsync(email, senha, smtpBuildingRoom);
+        }
+    }
+}

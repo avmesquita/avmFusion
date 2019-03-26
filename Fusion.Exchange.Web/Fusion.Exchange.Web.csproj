@@ -252,6 +252,19 @@
     <Content Include="Scripts\respond.min.js" />
     <None Include="Service References\svcExchange\configuration91.svcinfo" />
     <None Include="Service References\svcExchange\configuration.svcinfo" />
+    <None Include="Service References\svcExchange\FusionExchangeService1.wsdl" />
+    <None Include="Service References\svcExchange\FusionExchangeService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcExchange\FusionExchangeService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\svcExchange\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -275,19 +288,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Arduino\Index.cshtml" />
-    <None Include="Service References\svcExchange\FusionExchangeService.wsdl" />
-    <None Include="Service References\svcExchange\FusionExchangeService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\svcExchange\FusionExchangeService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
     <Content Include="Views\Office365\Index.cshtml" />
     <Content Include="Views\Home\GetO365.cshtml" />
     <Content Include="Views\Home\GetArduino.cshtml" />

@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?wsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:60767/FusionExchangeService.svc?wsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="FusionExchangeService.xsd" MetadataType="Schema" ID="8e570eb6-5e73-4e48-bdf8-3a9ac7e3e430" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd0" />
-    <MetadataFile FileName="FusionExchangeService1.xsd" MetadataType="Schema" ID="c46ca948-b6d1-4fa7-9d76-0d736a39e8e3" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd3" />
-    <MetadataFile FileName="FusionExchangeService.wsdl" MetadataType="Wsdl" ID="416fb70f-01c7-4803-b225-1b86a59f0b4d" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?wsdl" />
-    <MetadataFile FileName="FusionExchangeService2.xsd" MetadataType="Schema" ID="ed96313a-4627-41f3-ab7a-baab8c21406d" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd2" />
-    <MetadataFile FileName="FusionExchangeService3.xsd" MetadataType="Schema" ID="1aa592a4-8a57-4826-8339-ec98a885fb6f" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FusionExchangeService1.wsdl" MetadataType="Wsdl" ID="f6062c91-e047-4846-864a-ce6b11ce2c58" SourceId="1" SourceUrl="http://localhost:60767/FusionExchangeService.svc?wsdl" />
+    <MetadataFile FileName="FusionExchangeService4.xsd" MetadataType="Schema" ID="748fc13a-f0d5-4ca4-a107-b61da2401473" SourceId="1" SourceUrl="http://localhost:60767/FusionExchangeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FusionExchangeService41.xsd" MetadataType="Schema" ID="98eeeaf4-855d-479f-a68e-195f392b524e" SourceId="1" SourceUrl="http://localhost:60767/FusionExchangeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FusionExchangeService42.xsd" MetadataType="Schema" ID="517e7e45-2f1d-485d-80f1-229691cd2904" SourceId="1" SourceUrl="http://localhost:60767/FusionExchangeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FusionExchangeService43.xsd" MetadataType="Schema" ID="04152093-1d1f-44db-bf6c-218ea550cafa" SourceId="1" SourceUrl="http://localhost:60767/FusionExchangeService.svc?xsd=xsd1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
