@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" />
+  <xs:import schemaLocation="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" />
+  <xs:element name="obterDisponibilidadeSalaReuniao">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeSalaReuniaoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" minOccurs="0" name="obterDisponibilidadeSalaReuniaoResult" nillable="true" type="q1:ArrayOfResultadoDisponibilidadeSalaReuniao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeSalaReuniaoTimeZone">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeSalaReuniaoTimeZoneResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" minOccurs="0" name="obterDisponibilidadeSalaReuniaoTimeZoneResult" nillable="true" type="q2:ArrayOfResultadoDisponibilidadeSalaReuniao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeTimeZoneFull">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senha" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeTimeZoneFullResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" minOccurs="0" name="obterDisponibilidadeTimeZoneFullResult" nillable="true" type="q3:ArrayOfResultadoDisponibilidadeSalaReuniao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeExchange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senha" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smtp" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="obterDisponibilidadeExchangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" minOccurs="0" name="obterDisponibilidadeExchangeResult" nillable="true" type="q4:Status" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBuildingRoomList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senha" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBuildingRoomListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" minOccurs="0" name="getBuildingRoomListResult" nillable="true" type="q5:ArrayOfEmailAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRooms">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="senha" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="smtpBuildingRoom" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRoomsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" minOccurs="0" name="getRoomsResult" nillable="true" type="q6:ArrayOfEmailAddress" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

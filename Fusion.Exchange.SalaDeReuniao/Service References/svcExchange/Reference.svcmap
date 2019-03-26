@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="660420f8-45cd-4379-96e8-ee493c193e80" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FusionExchangeService.xsd" MetadataType="Schema" ID="8e570eb6-5e73-4e48-bdf8-3a9ac7e3e430" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FusionExchangeService1.xsd" MetadataType="Schema" ID="c46ca948-b6d1-4fa7-9d76-0d736a39e8e3" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FusionExchangeService.wsdl" MetadataType="Wsdl" ID="416fb70f-01c7-4803-b225-1b86a59f0b4d" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?wsdl" />
+    <MetadataFile FileName="FusionExchangeService2.xsd" MetadataType="Schema" ID="ed96313a-4627-41f3-ab7a-baab8c21406d" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FusionExchangeService3.xsd" MetadataType="Schema" ID="1aa592a4-8a57-4826-8339-ec98a885fb6f" SourceId="1" SourceUrl="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Fusion.Framework.Exchange.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" />
+  <xs:import schemaLocation="http://Fusionexchange.azurewebsites.net/FusionExchangeService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfResultadoDisponibilidadeSalaReuniao">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResultadoDisponibilidadeSalaReuniao" nillable="true" type="tns:ResultadoDisponibilidadeSalaReuniao" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResultadoDisponibilidadeSalaReuniao" nillable="true" type="tns:ArrayOfResultadoDisponibilidadeSalaReuniao" />
+  <xs:complexType name="ResultadoDisponibilidadeSalaReuniao">
+    <xs:sequence>
+      <xs:element name="_x003C_Mensagem_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Nome_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Smtp_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Status_x003E_k__BackingField" nillable="true" type="tns:Status" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Microsoft.Exchange.WebServices.Data" name="_x003C_Tipo_x003E_k__BackingField" type="q1:MeetingAttendeeType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResultadoDisponibilidadeSalaReuniao" nillable="true" type="tns:ResultadoDisponibilidadeSalaReuniao" />
+  <xs:complexType name="Status">
+    <xs:sequence>
+      <xs:element name="_x003C_ListaEventos_x003E_k__BackingField" nillable="true" type="tns:ArrayOfCalendarioEvento" />
+      <xs:element name="_x003C_Mensagem_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_StatusDisponibilidade_x003E_k__BackingField" type="tns:StatusDisponibilidade" />
+      <xs:element name="_x003C_SugestaoProximaReuniao_x003E_k__BackingField" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Status" nillable="true" type="tns:Status" />
+  <xs:complexType name="ArrayOfCalendarioEvento">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CalendarioEvento" nillable="true" type="tns:CalendarioEvento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCalendarioEvento" nillable="true" type="tns:ArrayOfCalendarioEvento" />
+  <xs:complexType name="CalendarioEvento">
+    <xs:sequence>
+      <xs:element name="_x003C_Details_x003E_k__BackingField" nillable="true" type="tns:CalendarioEventoDetalhe" />
+      <xs:element name="_x003C_EndTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_FreeBusyStatus_x003E_k__BackingField" type="tns:StatusLegadoLivreOcupado" />
+      <xs:element name="_x003C_StartTime_x003E_k__BackingField" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalendarioEvento" nillable="true" type="tns:CalendarioEvento" />
+  <xs:complexType name="CalendarioEventoDetalhe">
+    <xs:sequence>
+      <xs:element name="_x003C_IsException_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsMeeting_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsPrivate_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsRecurring_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_IsReminderSet_x003E_k__BackingField" type="xs:boolean" />
+      <xs:element name="_x003C_Location_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_StoreId_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Subject_x003E_k__BackingField" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CalendarioEventoDetalhe" nillable="true" type="tns:CalendarioEventoDetalhe" />
+  <xs:simpleType name="StatusLegadoLivreOcupado">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Free" />
+      <xs:enumeration value="Tentative" />
+      <xs:enumeration value="Busy" />
+      <xs:enumeration value="OOF" />
+      <xs:enumeration value="WorkingElsewhere" />
+      <xs:enumeration value="NoData" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusLegadoLivreOcupado" nillable="true" type="tns:StatusLegadoLivreOcupado" />
+  <xs:simpleType name="StatusDisponibilidade">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Desconhecido">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Livre">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Ocupado">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Erro">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EmReuniao">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="EmReuniao30">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="StatusDisponibilidade" nillable="true" type="tns:StatusDisponibilidade" />
+</xs:schema>

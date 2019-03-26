@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="Impeto.Exchange.wcfsvcapp.ImpetoExchangeService" CodeBehind="ImpetoExchangeService.svc.cs" %>

@@ -1,0 +1,91 @@
+﻿@model Fusion.Framework.Exchange.Entity.Dispositivo
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br /><br /><br />
+<h2>Detalhe da Configuração</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Configuração do Dispositivo</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Codigo)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Serial, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Serial, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Smtp, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @if (ViewBag.SalasDoCliente != null && ViewBag.SalasDoCliente.Count > 0)
+                {
+                    @Html.DropDownList("Smtp", new SelectList(ViewBag.SalasDoCliente, "Value", "Text", Model.Smtp), htmlAttributes: new { @class = "form-control", style = "width:600px;" })
+                }
+                else
+                {
+                    @Html.EditorFor(model => model.Smtp, new { htmlAttributes = new { @class = "form-control" } })
+                }
+                @Html.ValidationMessageFor(model => model.Smtp, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeZone, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("TimeZone", new SelectList(ViewBag.TimeZoneTable, "Value", "Text", "E. South America Standard Time"), htmlAttributes: new { @class = "form-control", style = "width:600px;" })
+                @Html.ValidationMessageFor(model => model.TimeZone, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DataAtivacao, "Data da Ativação", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.DataAtivacao, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Ativo)
+                    @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Gravar" class="btn btn-primary btn-large" title="Efetiva a Gravação de Alterações" />
+            </div>
+        </div>
+    </div>
+}
+<br /><br /><br />
+
+<div>
+    @Html.ActionLink("Voltar", "Index", new { id = Model.CodigoCliente }, new { @class = "btn btn-default" })
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

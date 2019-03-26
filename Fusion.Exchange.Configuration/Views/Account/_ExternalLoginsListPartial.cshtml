@@ -1,0 +1,30 @@
+﻿@model Fusion.Exchange.Configuration.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+@*
+    <h4>Autenticadores de Contas Externas</h4>
+    <hr />
+    @{
+        var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+        if (loginProviders.Count() == 0) {
+            <div>
+                <p>
+                    Não existem autenticadores de contas externas configuradas para este sistema
+                    Para maiores informações, favor entrar em contato com o fabricante.
+                </p>
+            </div>
+        }
+        else {
+            using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+                @Html.AntiForgeryToken()
+                <div id="socialLoginList">
+                    <p>
+                        @foreach (AuthenticationDescription p in loginProviders) {
+                            <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Log in using your @p.Caption account">@p.AuthenticationType</button>
+                        }
+                    </p>
+                </div>
+            }
+        }
+    }
+*@

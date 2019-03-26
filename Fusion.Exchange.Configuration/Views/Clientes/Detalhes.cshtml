@@ -1,0 +1,81 @@
+﻿@model Fusion.Framework.Exchange.Entity.Cliente
+
+@{
+    ViewBag.Title = "Detalhes da Conta do Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br /><br /><br />
+<h2>Detalhe da Conta</h2>
+
+<div>
+    <h4>Dados da Conta Principal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Smtp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Smtp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            **********
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Token)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Token)
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstDevice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstDevice)
+        </dd>
+
+        <dt>&nbsp;</dt>
+        <dd>&nbsp;</dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCadastro)
+        </dd>
+
+    </dl>
+
+</div>
+<br /><br />
+<p style="margin-left:calc(10% - 20px);">
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Codigo }, new { @class = "btn btn-large btn-warning", style = "width:300px;color:black;" })    
+</p>
