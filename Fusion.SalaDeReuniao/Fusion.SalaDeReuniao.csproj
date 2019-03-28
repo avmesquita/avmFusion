@@ -9,12 +9,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E26A0D3B-D020-4B56-A78C-2E8A494E315F}</ProjectGuid>
+    <ProjectGuid>{18BF7DD9-D780-4E13-9FCA-4604598CA9A7}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Exchange.Portal</RootNamespace>
-    <AssemblyName>Impeto.Exchange.Portal</AssemblyName>
+    <RootNamespace>Fusion.SalaDeReuniao</RootNamespace>
+    <AssemblyName>Fusion.SalaDeReuniao</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -115,15 +115,6 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.Formatting">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Http.WebHost">
-      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -176,13 +167,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Contexto\ImpetoContext.cs" />
-    <Compile Include="Contexto\SalaDeReuniaoContexto.cs" />
+    <Compile Include="Contexto\FusionContext.cs" />
+    <Compile Include="Contexto\SalaDeReuniaoContext.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DispositivoController.cs" />
-    <Compile Include="Controllers\ErroController.cs" />
-    <Compile Include="Controllers\GestaoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Entity\Cliente.cs" />
@@ -199,12 +186,15 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\logo-Fusion-topo.png" />
+    <Content Include="Content\logo-Fusion.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FusionSalaDeReuniao.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -251,22 +241,9 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Erro\Forbidden.cshtml" />
-    <Content Include="Views\Erro\Index.cshtml" />
-    <Content Include="Views\Erro\InternalError.cshtml" />
-    <Content Include="Views\Erro\InvalidRequest.cshtml" />
-    <Content Include="Views\Erro\Maintenance.cshtml" />
-    <Content Include="Views\Erro\NoCookieSupport.cshtml" />
-    <Content Include="Views\Erro\NotAuthorized.cshtml" />
-    <Content Include="Views\Erro\NotFound.cshtml" />
-    <Content Include="Views\Erro\PagamentoIndisponivel.cshtml" />
-    <Content Include="Views\Erro\TimedOut.cshtml" />
-    <Content Include="Views\Erro\WindowsParentControl.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Dispositivo\" />
-    <Folder Include="Views\Gestao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -292,9 +269,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54985</DevelopmentServerPort>
+          <DevelopmentServerPort>51682</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:54985/</IISUrl>
+          <IISUrl>http://localhost:51682/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

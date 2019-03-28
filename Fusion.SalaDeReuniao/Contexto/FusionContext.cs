@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fusion.SalaDeReuniao.Entity;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Core.Objects;
@@ -7,18 +8,19 @@ using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 using System.Web;
 
-namespace Impeto.Exchange.Portal.Contexto
+
+namespace Fusion.SalaDeReuniao.Contexto
 {
-    public class ImpetoContext : DbContext
+    public class FusionContext : DbContext
     {
-        public ImpetoContext()
+        public FusionContext()
             : base("DefaultConnection")
         {
             this.Configuration.LazyLoadingEnabled = false;
             this.Configuration.ProxyCreationEnabled = false;
         }
 
-        public class MyInitializer : DropCreateDatabaseIfModelChanges<ImpetoContext>
+        public class MyInitializer : DropCreateDatabaseIfModelChanges<FusionContext>
         {
             public MyInitializer()
             {
@@ -26,7 +28,7 @@ namespace Impeto.Exchange.Portal.Contexto
 
 
                 // RECRIA QQ ALTERACAO
-                //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<AgendamentoContexto>());                
+                Database.SetInitializer(new DropCreateDatabaseIfModelChanges<FusionContext>());                
 
                 // CRIA SOMENTE SE NAO TIVER NADA
                 //Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());
@@ -67,11 +69,9 @@ namespace Impeto.Exchange.Portal.Contexto
 
         private void MyGeneration(DbModelBuilder modelBuilder)
         {
-            /*
             modelBuilder.Entity<Dispositivo>()
-                        .HasRequired<Cliente>(s => s.Dispositivo)
+                        .HasRequired<Cliente>(s => s.Cliente)
                         .WithMany(s => s.Dispositivos);
-            */
         }
     }
 }

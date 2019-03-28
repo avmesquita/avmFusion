@@ -7,8 +7,8 @@
     <ProjectGuid>{FF9D7BA1-B3D5-44B3-9528-DFA341EAEC51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Framework.Exchange.Security</RootNamespace>
-    <AssemblyName>Impeto.Framework.Exchange.Security</AssemblyName>
+    <RootNamespace>Fusion.Framework.Exchange.Security</RootNamespace>
+    <AssemblyName>Fusion.Framework.Exchange.Security</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

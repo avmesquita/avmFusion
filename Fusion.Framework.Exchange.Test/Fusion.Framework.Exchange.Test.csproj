@@ -6,8 +6,8 @@
     <ProjectGuid>{DCD81B82-9D79-4C31-A52E-25855730E3C6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Framework.Exchange.Test</RootNamespace>
-    <AssemblyName>Impeto.Framework.Exchange.Test</AssemblyName>
+    <RootNamespace>Fusion.Framework.Exchange.Test</RootNamespace>
+    <AssemblyName>Fusion.Framework.Exchange.Test</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -58,9 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Impeto.Framework.Exchange.Service\Impeto.Framework.Exchange.Service.csproj">
+    <ProjectReference Include="..\Fusion.Framework.Exchange.Service\Fusion.Framework.Exchange.Service.csproj">
       <Project>{dd0cc893-2285-47ec-95d8-833405167629}</Project>
-      <Name>Impeto.Framework.Exchange.Service</Name>
+      <Name>Fusion.Framework.Exchange.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

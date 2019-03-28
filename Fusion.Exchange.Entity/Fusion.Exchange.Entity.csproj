@@ -7,8 +7,8 @@
     <ProjectGuid>{032E3637-B30D-47F2-8147-5C9817C7B787}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Exchange.Entity</RootNamespace>
-    <AssemblyName>Impeto.Exchange.Entity</AssemblyName>
+    <RootNamespace>Fusion.Exchange.Entity</RootNamespace>
+    <AssemblyName>Fusion.Exchange.Entity</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
