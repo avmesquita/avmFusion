@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Impeto.Framework.Web.NHibernate</name>
+        <name>Fusion.Framework.Web.NHibernate</name>
     </assembly>
     <members>
     </members>

@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAADFC7C-8CFF-4E3A-A3F2-AE97637B9751}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{4922E896-4758-4004-946B-FAFC80B7DC86}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Framework.Database.SQLite.Test</RootNamespace>
-    <AssemblyName>Impeto.Framework.Database.SQLite.Test</AssemblyName>
+    <RootNamespace>Fusion.Framework.Database.SQLite</RootNamespace>
+    <AssemblyName>Fusion.Framework.Database.SQLite</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -66,20 +63,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Dispositivo.cs" />
+    <Compile Include="Plano.cs" />
+    <Compile Include="SQLiteDatabase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="App_Data\ImpetoExchange.s3db" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Impeto.Framework.Exchange.Models\Impeto.Framework.Exchange.Models.csproj">
-      <Project>{75b05c24-25db-43b8-8b27-a31f4d313db0}</Project>
-      <Name>Impeto.Framework.Exchange.Models</Name>
+    <ProjectReference Include="..\Fusion.Framework.Exchange.Models\Fusion.Framework.Exchange.Models.csproj">
+      <Project>{75B05C24-25DB-43B8-8B27-A31F4D313DB0}</Project>
+      <Name>Fusion.Framework.Exchange.Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.104.0\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

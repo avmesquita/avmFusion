@@ -8,10 +8,10 @@
     <ProjectGuid>1c47c081-4d0c-4acc-9087-b8de15ab0710</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Impeto.Exchange.wcfsvcapp.Azure</RootNamespace>
-    <AssemblyName>Impeto.Exchange.wcfsvcapp.Azure</AssemblyName>
+    <RootNamespace>Fusion.Exchange.wcfsvcapp.Azure</RootNamespace>
+    <AssemblyName>Fusion.Exchange.wcfsvcapp.Azure</AssemblyName>
     <StartDevelopmentStorage>True</StartDevelopmentStorage>
-    <Name>Impeto.Exchange.wcfsvcapp.Azure</Name>
+    <Name>Fusion.Exchange.wcfsvcapp.Azure</Name>
     <SccProjectName>SAK</SccProjectName>
     <SccProvider>SAK</SccProvider>
     <SccAuxPath>SAK</SccAuxPath>

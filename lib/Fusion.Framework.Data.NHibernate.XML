@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Impeto.Framework.Data.NHibernate</name>
+        <name>Fusion.Framework.Data.NHibernate</name>
     </assembly>
     <members>
-        <member name="T:Impeto.Framework.Data.NHibernate.Repository`2">
+        <member name="T:Fusion.Framework.Data.NHibernate.Repository`2">
             <summary>
             Classe básica de repositório do NHibernate, que implementa o padrão de Repository do DDD
             </summary>
             <typeparam name="TEntity"></typeparam>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.FindByObject(`1)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.FindByObject(`1)">
             <summary>
             Obtém um objeto através das propriedades preenchidas em objeto
             de filtro passado como parâmetro
@@ -18,14 +18,14 @@
             <param name="filterObject">O objeto de filtro</param>
             <returns>IEnumerable com os resultados encontrados</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.FindById(`0)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.FindById(`0)">
             <summary>
             Obtém um objeto do domínio através da chave primária
             </summary>
             <param name="id">Valor da chave primária</param>
             <returns>Retorna um objeto</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.FindEqual(System.String,System.Object)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.FindEqual(System.String,System.Object)">
             <summary>
             Obtém um objeto do domínio através de uma propriedade/valor
             </summary>
@@ -33,13 +33,13 @@
             <param name="value">Valor da propriedade</param>
             <returns>Retorna um objeto</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.GetAll">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.GetAll">
             <summary>
             Obtém uma lista com todos os objetos do domínio
             </summary>
             <returns>Retorna uma lista de objetos</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.GetAllEqual(System.String,System.Object)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.GetAllEqual(System.String,System.Object)">
             <summary>
             Obtém uma lista com todos os objetos do domínio através de uma propriedade/valor
             </summary>
@@ -47,7 +47,7 @@
             <param name="value">Valor da propriedade</param>
             <returns>Retorna uma lista de objetos</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.SaveOrUpdate(`1)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.SaveOrUpdate(`1)">
             <summary>
             Inclui ou atualiza um objeto, conforme a chave primária.
             Se a chave primária estiver preenchida, atualiza, se não, inclui.
@@ -55,27 +55,27 @@
             <param name="entity">Objeto do domínio</param>
             <returns>Retorna um objeto salvo</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.Insert(`1)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.Insert(`1)">
             <summary>
             Inclui um objeto.
             </summary>
             <param name="entity">Objeto do domínio</param>
             <returns>Retorna um objeto salvo</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.Update(`1)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.Update(`1)">
             <summary>
             Atualiza um objeto, conforme a chave primária.
             </summary>
             <param name="entity">Objeto do domínio</param>
             <returns>Retorna um objeto salvo</returns>
         </member>
-        <member name="M:Impeto.Framework.Data.NHibernate.Repository`2.Delete(`1)">
+        <member name="M:Fusion.Framework.Data.NHibernate.Repository`2.Delete(`1)">
             <summary>
             Excluir um objeto do domínio através da chave primária
             </summary>
             <param name="entity">Objeto do domínio</param>
         </member>
-        <member name="T:Impeto.Framework.Data.NHibernate.SessionFactory">
+        <member name="T:Fusion.Framework.Data.NHibernate.SessionFactory">
             <summary>
             Classe interna para acesso singleton ao SessionFactory
             </summary>

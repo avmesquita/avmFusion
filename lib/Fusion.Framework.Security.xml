@@ -1,20 +1,20 @@
 <?xml version="1.0"?>
 <doc>
     <assembly>
-        <name>Impeto.Framework.Security</name>
+        <name>Fusion.Framework.Security</name>
     </assembly>
     <members>
-        <member name="T:Impeto.Framework.Security.Cryptograph.Enumeration.HashAlgorithmType">
+        <member name="T:Fusion.Framework.Security.Cryptograph.Enumeration.HashAlgorithmType">
             <summary>
             Enumerador dos tipos de algoritmo hash.
             </summary>
         </member>
-        <member name="F:Impeto.Framework.Security.Cryptograph.Enumeration.HashAlgorithmType.SHA512">
+        <member name="F:Fusion.Framework.Security.Cryptograph.Enumeration.HashAlgorithmType.SHA512">
             <summary>
             Tipo de algoritmo hash SHA de 512 bits.
             </summary>
         </member>
-        <member name="M:Impeto.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.GenerateKey(System.String)">
+        <member name="M:Fusion.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.GenerateKey(System.String)">
             <summary>
             Generate an encryption key based on the given phrase.  The 
             phrase is hashed to create a unique 32 character (256-bit) 
@@ -24,7 +24,7 @@
             </summary>
             <param name="SecretPhrase">SecretPhrase - phrase to generate the key and IV from.</param>
         </member>
-        <member name="M:Impeto.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.Transform(System.Byte[],Impeto.Framework.Security.Cryptograph.Enumeration.TransformType)">
+        <member name="M:Fusion.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.Transform(System.Byte[],Fusion.Framework.Security.Cryptograph.Enumeration.TransformType)">
             <summary>
             Transform one form to anoter based on CryptoTransform. It is used to encrypt to decrypt as well as decrypt to encrypt.
             </summary>
@@ -32,7 +32,7 @@
             <param name="transformType">encrypt/decrypt transform</param>
             <returns>byte array - transformed value</returns>
         </member>
-        <member name="M:Impeto.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.Transform(System.String,System.String,Impeto.Framework.Security.Cryptograph.Enumeration.TransformType)">
+        <member name="M:Fusion.Framework.Security.Cryptograph.Symmetric.Service.BaseSymmetricAlgorithmService`1.Transform(System.String,System.String,Fusion.Framework.Security.Cryptograph.Enumeration.TransformType)">
             <summary>
             Transform one form to anoter based on CryptoTransform. It is used to encrypt to decrypt as well as decrypt to encrypt.
             </summary>
@@ -40,7 +40,7 @@
             <param name="transformType">encrypt/decrypt transform</param>
             <returns>byte array - transformed value</returns>
         </member>
-        <member name="T:Impeto.Framework.Security.Cryptograph.Symmetric.Service.RijndaelSymmetricAlgorithmService">
+        <member name="T:Fusion.Framework.Security.Cryptograph.Symmetric.Service.RijndaelSymmetricAlgorithmService">
              <summary>
              Serviço responsável por criptografar/descriptografar dados usando algoritmo de criptografia Rijndael.
              Essa classe não pode ser herdada.
@@ -59,38 +59,38 @@
                  secretPhrase, HashAlgorithmType.SHA384);
              </example>
         </member>
-        <member name="T:Impeto.Framework.Security.Properties.Resources">
+        <member name="T:Fusion.Framework.Security.Properties.Resources">
             <summary>
               A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.ResourceManager">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.ResourceManager">
             <summary>
               Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.Culture">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.Culture">
             <summary>
               Overrides the current thread's CurrentUICulture property for all
               resource lookups using this strongly typed resource class.
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.HashCodeException">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.HashCodeException">
             <summary>
               Looks up a localized string similar to Error while generating hash code: {0}..
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.ParameterCanNotBeNull">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.ParameterCanNotBeNull">
             <summary>
               Looks up a localized string similar to Parameter can not be null..
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.SecretPhraseParameterInvalid">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.SecretPhraseParameterInvalid">
             <summary>
               Looks up a localized string similar to secretPhrase parameter cannot be converted into bytes..
             </summary>
         </member>
-        <member name="P:Impeto.Framework.Security.Properties.Resources.TransformTypeInvalid">
+        <member name="P:Fusion.Framework.Security.Properties.Resources.TransformTypeInvalid">
             <summary>
               Looks up a localized string similar to TransformType not found..
             </summary>
