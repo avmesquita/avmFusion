@@ -289,9 +289,9 @@ namespace Fusion.Exchange.SalaDeReuniao
         private static void notificarNaoFuncionamento(string serial, string msg)
         {
             MailMessage mensagem = new MailMessage();
-            mensagem.To.Add(new MailAddress("andre.mesquita@Fusion.com.br", "Andre Mesquita"));
-            mensagem.To.Add(new MailAddress("cid.filho@Fusion.com.br", "Cid Filho"));
-            mensagem.From = new MailAddress("andre.mesquita.Fusion@gmail.com");
+            mensagem.To.Add(new MailAddress("avmFusion@gmail.com", "Andre Mesquita"));
+            mensagem.To.Add(new MailAddress("avmDevies@gmail.com", "Devices"));
+            mensagem.From = new MailAddress("avmFusion@gmail.com");
             mensagem.Subject = "[SALA DE REUNIÃO] - [Falha] - " + serial;
 
             string corpo = "<H2>DISPOSITIVO " + serial + "</H2>" +
@@ -308,7 +308,7 @@ namespace Fusion.Exchange.SalaDeReuniao
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("andre.mesquita.Fusion@gmail.com", "Fusion.mesquita.andre");
+            smtp.Credentials = new NetworkCredential("avmFusion@gmail.com", "Fusion.mesquita.andre");
             smtp.Send(mensagem);
 
         }
@@ -317,9 +317,9 @@ namespace Fusion.Exchange.SalaDeReuniao
         public void notificacaoGeral(string assunto, string msg)
         {
             MailMessage mensagem = new MailMessage();
-            mensagem.To.Add(new MailAddress("andre.mesquita@Fusion.com.br", "Andre Mesquita"));
-            mensagem.To.Add(new MailAddress("cid.filho@Fusion.com.br", "Cid Filho"));
-            mensagem.From = new MailAddress("andre.mesquita.Fusion@gmail.com");
+            mensagem.To.Add(new MailAddress("avmFusion@gmail.com", "Andre Mesquita"));
+            mensagem.To.Add(new MailAddress("avmDevices@gmail.com", "Devices"));
+            mensagem.From = new MailAddress("avmFusion@gmail.com");
             mensagem.Subject = "[SALA DE REUNIÃO] - [" + assunto + "]";
 
             string corpo = "<H2>" + assunto + "</H2>" +
@@ -336,7 +336,7 @@ namespace Fusion.Exchange.SalaDeReuniao
             smtp.Host = "smtp.gmail.com";
             smtp.Port = 587;
             smtp.EnableSsl = true;
-            smtp.Credentials = new NetworkCredential("andre.mesquita.Fusion@gmail.com", "Fusion.mesquita.andre");
+            smtp.Credentials = new NetworkCredential("avmFusion@gmail.com", "Fusion");
             smtp.Send(mensagem);
 
         }

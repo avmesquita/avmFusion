@@ -421,7 +421,7 @@ namespace Fusion.Framework.Exchange.Service
                     appointment.Subject = "[CANCELADO] " + appointment.Subject;
 
                     // altera o corpo da mensagem do apontamento
-                    appointment.Body.Text = "Este evento foi cancelado pelo Ímpeto Sala de Reunião." +
+                    appointment.Body.Text = "Este evento foi cancelado pelo Fusion Sala de Reunião." +
                                              Environment.NewLine + Environment.NewLine + Environment.NewLine +
                                              appointment.Body.Text;
 
@@ -478,7 +478,7 @@ namespace Fusion.Framework.Exchange.Service
                 // appointment.End = DateTime.Now.AddMinutes(-1);
 
                 // altera o corpo da mensagem do apontamento
-                //appointment.Body.Text = "Este evento foi auditado pelo Ímpeto Conference Auditor." +
+                //appointment.Body.Text = "Este evento foi auditado pelo Fusion Conference Auditor." +
                 //                         Environment.NewLine + Environment.NewLine + Environment.NewLine +
                 //                         appointment.Body.Text;
 

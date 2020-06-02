@@ -15,7 +15,7 @@ namespace Fusion.Exchange.Configuration.Controllers
         // GET: QRCode
         public ActionResult Index()
         {            
-            string htmlimagem = "<img src = 'http://Fusionexchangeconfiguration.azurewebsites.net/QRCode/Generate?texto='"+ "http://Fusionexchangeconfiguration.azurewebsites.net/" + "' alt='Ímpeto Sala de Reunião' style='' />";
+            string htmlimagem = "<img src = 'http://Fusionexchangeconfiguration.azurewebsites.net/QRCode/Generate?texto='"+ "http://Fusionexchangeconfiguration.azurewebsites.net/" + "' alt='AVM Sistemas Sala de Reunião' style='' />";
 
             ViewBag.htmlimagem = htmlimagem;
 

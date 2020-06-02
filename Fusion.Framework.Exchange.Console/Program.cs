@@ -189,7 +189,7 @@ namespace Fusion.Framework.Exchange
                     if (item.Status.StatusDisponibilidade == Models.StatusDisponibilidade.EmReuniao30)
                     {
                         // verifica status do arduino
-                        // se não tiver ninguém na sala, envia e-mail avisando que a reunião está sendo cancelada pelo Ímpeto Conference Auditor
+                        // se não tiver ninguém na sala, envia e-mail avisando que a reunião está sendo cancelada pelo AVM Sistemas Conference Auditor
                         bool arduinoStatus = false;
                         if (arduinoStatus)
                         {

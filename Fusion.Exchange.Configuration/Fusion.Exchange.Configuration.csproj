@@ -263,8 +263,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\icon-success.png" />
     <Content Include="Content\images\pixel.png" />
-    <Content Include="Content\logo-impeto-topo.png" />
-    <Content Include="Content\logo-impeto.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -289,7 +287,7 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <Content Include="App_Data\ImpetoExchange.s3db" />
+    <Content Include="App_Data\FusionExchange.s3db" />
     <Content Include="Properties\DataSources\Impeto.Framework.Exchange.Models.ResultadoDisponibilidadeSalaReuniao.datasource" />
     <Content Include="Properties\DataSources\Impeto.Framework.Exchange.Models.Status.datasource" />
     <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
@@ -422,7 +420,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>

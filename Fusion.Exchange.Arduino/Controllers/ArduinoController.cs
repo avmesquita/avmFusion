@@ -72,44 +72,5 @@ namespace Fusion.Exchange.Arduino.Controllers
             }
             return retorno;
         }        
-        /// <summary>
-        /// Limpa todos os ítens do Historico
-        /// </summary>
-        /// <param name="token">Token de segurança</param>
-        /// <returns>OK or BAD</returns>
-        /*
-        [HttpPost]
-        [Route("Fusion.Exchange.Arduino/api/Arduino/LimparHistorico/{token}")]
-        public string LimparHistorico(string token)
-        {
-            string retorno = "BAD";
-            if (token != null && token.ToLower().Contains("cid"))
-            {
-                retorno = ModeloDeEstado.Instance.LimparHistorico();
-                return retorno;
-            }
-            return retorno;
-        }
-        
-        public async Task<IEnumerable<Dispositivo>> GetConfiguration(string serial)        
-        {
-            string path = string.Format("http://Fusionexchangeconfiguration.azurewebsites.net/api/Dispositivo/GetDevice/{0}",serial);
-
-            HttpClient cliente = new HttpClient();
-
-            var x = cliente.GetAsync(path);
-            var y = x.Result;
-
-            var formatters = new List<MediaTypeFormatter>() {
-                new JsonMediaTypeFormatter(),
-                new XmlMediaTypeFormatter()
-            };
-
-            var dispositivo = y.Content.ReadAsAsync<IEnumerable<Dispositivo>>(formatters);
-
-            return await dispositivo;
-
-        }
-        */
     }
 }
